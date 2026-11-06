@@ -1,0 +1,253 @@
+/* ==========================================
+   1. RESET Y VARIABLES GLOBALES (Accesibilidad y Unidades Relativas)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #f8f9fa;            
+    --color-surface: #ffffff;       
+    --color-primary: #1e293b;       
+    --color-accent: #2563eb;        
+    --color-accent-hover: #1d4ed8;  
+    --color-text: #0f172a;          
+    --color-text-muted: #475569;   
+    --border-color: #e2e8f0;       
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 1rem; /* 16px base */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   //2. ENCABEZADO (HEADER)
+   ========================================== */
+header {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   3. NAVEGACIÓN SEMÁNTICA (NAV)
+   ========================================== */
+nav {
+    background-color: #0f172a;
+    padding: 0.75rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    /* Tamaño táctil accesible (WCAG 2.5.8) */
+    display: inline-block;
+    min-height: 44px;
+    line-height: 28px;
+}
+
+nav a:hover, nav a:focus {
+    background-color: var(--color-accent);
+    outline: 2px solid #ffffff; /* Foco visible para teclado (WCAG 2.4.7) */
+}
+
+/* ==========================================
+   4. CONTENIDO PRINCIPAL (MAIN Y TARJETAS)
+   ========================================== */
+main {
+    max-width: 900px;
+    width: 90%;
+    margin: 2rem auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section {
+    background-color: var(--color-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Figura e Imagen */
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    max-height: 250px;
+    object-fit: cover;
+}
+
+figcaption {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   5. FORMULARIO ACCESIBLE
+   ========================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 500px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    outline: 3px solid #93c5fd;
+    border-color: var(--color-accent);
+}
+
+button {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+    min-height: 44px; /* Tamaño tactile mínimo */
+}
+
+button:hover, button:focus {
+    background-color: var(--color-accent-hover);
+    outline: 3px solid #93c5fd;
+}
+
+/* ==========================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================== */
+footer {
+    background-color: var(--color-primary);
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+/* ==========================================
+   7. DISEÑO ADAPTABLE (MEDIA QUERIES - WCAG 1.4.10)
+   ========================================== */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/*
+==================================
+Diseño Tablas de comandos de linux
+==================================
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f1f5f9;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+code {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 600;
+}

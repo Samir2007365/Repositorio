@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysWiki - Comandos Linux</title>
+    <!-- Misma hoja de estilos externa para mantener coherencia -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Encabezado de la sección -->
+    <header>
+        <h1>Guía de Comandos Linux</h1>
+        <p>Documentación esencial para administración de sistemas y terminal POSIX</p>
+    </header>
+
+    <!-- Navegación semántica (marcando la página actual) -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="linux.html">Comandos Linux</a></li>
+            <li><a href="windows.html">Comandos Windows CMD</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <section>
+            <h2>Administración del Sistema y Archivos</h2>
+            <p>Comandos fundamentales para la navegación por el sistema de archivos, gestión de permisos y manipulación de directorios en entornos GNU/Linux.</p>
+            
+            <figure>
+                <img src="img/logo linux.png" alt="Logotipo oficial del núcleo Linux y la mascota Tux">
+                <figcaption>Terminal de comandos y herramientas de administración GNU/Linux.</figcaption>
+            </figure>
+
+            <!-- Tabla accesible de comandos -->
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Comando</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Ejemplo de Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ls -la</code></td>
+                        <td>Lista todos los archivos y directorios, incluidos los ocultos, con formato detallado.</td>
+                        <td><code>ls -la /var/log</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>chmod</code></td>
+                        <td>Modifica los permisos de lectura, escritura y ejecución de un archivo o directorio.</td>
+                        <td><code>chmod 755 script.sh</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>grep</code></td>
+                        <td>Busca patrones de texto dentro de archivos o salidas de comandos.</td>
+                        <td><code>grep -i "error" sys.log</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>htop</code> / <code>top</code></td>
+                        <td>Monitor de procesos en tiempo real para evaluar el uso de CPU y memoria RAM.</td>
+                        <td><code>htop</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Multiplexado de Terminal (tmux)</h2>
+            <p>Herramienta clave para la gestión de sesiones persistentes en servidores y terminales ligeras, permitiendo dividir la pantalla en paneles independientemente de la conexión SSH.</p>
+            
+            <ul>
+                <li><strong><code>tmux new -s sesion1</code>:</strong> Crea una nueva sesión nombrada.</li>
+                <li><strong><code>tmux attach -t sesion1</code>:</strong> Reorganiza y vuelve a conectarse a una sesión existente.</li>
+                <li><strong><code>Ctrl + b</code> seguido de <code>%</code>:</strong> Divide la pantalla de la terminal en dos paneles verticales.</li>
+                <li><strong><code>Ctrl + b</code> seguido de <code>"</code>:</strong> Divide la pantalla de la terminal en dos paneles horizontales.</li>
+            </ul>
+        </section>
+
+        <!-- Formulario de filtrado local para la página de Linux -->
+        <section>
+            <h2>Filtrar Comandos de Linux</h2>
+            <form id="filter-linux-form" action="#" method="GET">
+                <label for="filtro-linux">Buscar comando de Linux:</label>
+                <input type="text" id="filtro-linux" name="q_linux" placeholder="Ej. chmod, tmux, grep..." required>
+                <button type="submit">Filtrar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 SysWiki - Módulo de documentación Linux. Desarrollado por el equipo de trabajo.</p>
+    </footer>
+
+    <!-- Script externo -->
+    <script src="js/codigo.js"></script>
+</body>
+</html>
